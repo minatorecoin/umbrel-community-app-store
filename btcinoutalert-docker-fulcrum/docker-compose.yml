@@ -1,24 +1,44 @@
-version: "1.0"
+version: "3.7"
 
 services:
   app_proxy:
     environment:
-      # Formato: <app-id>_<docker-service-name>_1
-      APP_HOST: btcinoutalert-fulcrum
-      APP_PORT: 3000
+      APP_HOST: $APP_FULCRUM_IP
+      APP_PORT: 50001
 
-  server:
-    image: getumbrel/community-app-store-fulcrum:latest
-    user: "1000:1000"
-    init: true
+  app:
+    image: getumbrel/umbrel-electrs:v1.0.2
+    depends_on:
+      - fulcrum-mainnet
+    restart: on-failure
+    environment:
+      ELECTRUM_LOCAL_SERVICE: "${DEVICE_DOMAIN_NAME}"
+      BITCOIN_HOST: "${APP_BITCOIN_NODE_IP}"
+      RPC_USER: "${APP_BITCOIN_RPC_USER}"
+      RPC_PASSWORD: "${APP_BITCOIN_RPC_PASS}"
+      RPC_PORT: "${APP_BITCOIN_RPC_PORT}"
+    networks:
+      default:
+        ipv4_address: $APP_FULCRUM_IP
 
   fulcrum-mainnet:
     build: .
     dockerfile: Dockerfile
     container_name: fulcrum-mainnet
+    restart: always
+    environment:
+      ELECTRS_NETWORK: "${APP_BITCOIN_NETWORK_ELECTRS}"
+      ELECTRS_DAEMON_RPC_ADDR: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
     volumes:
-      - /home/umbrel/umbrel/app-data/bitcoin:/home/umbrel/appdata/fulcrum
+      - "${APP_BITCOIN_DATA_DIR}:/data/.bitcoin:ro"
+      - "${APP_DATA_DIR}/data/fulcrum:/data"
     ports:
       - "50001:50001"
       - "50002:50002"
-    restart: always
+    networks:
+      default:
+        ipv4_address: $APP_FULCRUM_IP
+
+networks:
+  default:
+    driver: bridge
