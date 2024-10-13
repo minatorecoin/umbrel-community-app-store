@@ -1,22 +1,30 @@
 manifestVersion: 1
 id: btcinoutalert-electrumx
-category: Finance
 name: Electrumx
-version: v1.16.0
 tagline: Electrumx needs a tagline
-description: >
-  Description goes here  
-developer: Umbrel
-website: https://getumbrel.com/
-dependencies: []
-repo: https://github.com/getumbrel/electrumx
-support: https://github.com/getumbrel/electrumx/issues
+icon: https://svgur.com/i/mvA.svg
+category: Development
+version: "1.0.0"
 port: 10004
+description: >-
+  Add your app's description here.
+
+
+  You can also add newlines!
+
+developer: Umbrel
+website: https://umbrel.com
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-electrumx-app
+repo: https://github.com/getumbrel/umbrel-electrumx-app
+support: https://github.com/getumbrel/umbrel-electrumx-app/issues
 gallery:
-  - 1.jpg
-  - 2.jpg
-  - 3.jpg
-path: ""
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+releaseNotes: >-
+  Add what's new in the latest version of your app here.
+dependencies: []
 path: ""
 defaultUsername: ""
 defaultPassword: ""
