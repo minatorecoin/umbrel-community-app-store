@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: electrumx
+id: btcinoutalert-electrumx
 category: Finance
 name: Electrumx
 version: v1.16.0
@@ -17,4 +17,6 @@ gallery:
   - 2.jpg
   - 3.jpg
 path: ""
+path: ""
+defaultUsername: ""
 defaultPassword: ""
