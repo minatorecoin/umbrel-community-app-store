@@ -6,7 +6,10 @@ version: v1.16.0
 tagline: Electrumx needs a tagline
 description: >
   Description goes here
-developer: Umbrel
+developer: henrygd
+website: https://github.com/henrygd/beszel
+submitter: henrygd
+submission:
 website: 
 dependencies: []
 port: 10004
