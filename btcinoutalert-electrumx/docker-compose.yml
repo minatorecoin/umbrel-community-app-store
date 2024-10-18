@@ -46,4 +46,4 @@ services:
       - "${APP_ELECTRS_NODE_PORT}:50001"
     networks:
       default:
-      ipv4_address: $APP_ELECTRS_NODE_IP
+        ipv4_address: $APP_ELECTRS_NODE_IP
