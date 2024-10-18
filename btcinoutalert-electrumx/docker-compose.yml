@@ -7,10 +7,26 @@ services:
       APP_HOST: $APP_ELECTRS_IP
       APP_PORT: 3006
        
-#  electrumx:
-#    image: lukechilds/electrumx
+#  app:
+#    image: getumbrel/umbrel-electrs:v1.0.2@sha256:3dae686b22b1fdfd72ff058d022045f96cc5116e76f82f435d58f1cfe8f46418
+#    depends_on:
+#      - electrs
+#    restart: on-failure
+#    environment:
+#      ELECTRUM_HIDDEN_SERVICE: "${APP_ELECTRS_RPC_HIDDEN_SERVICE}"
+#      ELECTRUM_LOCAL_SERVICE: "${DEVICE_DOMAIN_NAME}"
+#      ELECTRS_HOST: "${APP_ELECTRS_NODE_IP}"
+#      BITCOIN_HOST: "${APP_BITCOIN_NODE_IP}"
+#      RPC_USER: "${APP_BITCOIN_RPC_USER}"
+#      RPC_PASSWORD: "${APP_BITCOIN_RPC_PASS}"
+#      RPC_PORT: "${APP_BITCOIN_RPC_PORT}"
+#    networks:
+#      default:
+#        ipv4_address: $APP_ELECTRS_IP
+#  
+#  electrs:
+#    image: getumbrel/electrs:v0.10.2@sha256:bcd3066e795b0f242540481736705b5e86fa159b539fdd562f08007bd112faf9
 #    restart: always
-#    stop_grace_period: 300s
 #    environment:
 #      ELECTRS_LOG_FILTERS: "INFO"
 #      ELECTRS_NETWORK: "${APP_BITCOIN_NETWORK_ELECTRS}"
