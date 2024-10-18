@@ -7,7 +7,7 @@ tagline: Electrumx needs a tagline
 description: >
   Description goes here
 developer: Umbrel
-website: https://getumbrel.com/
+website: 
 dependencies: []
 repo: https://github.com/minatorecoin/umbrel-community-app-store/electrumx
 support: https://github.com/minatorecoin/umbrel-community-app-store/electrumx/issues
