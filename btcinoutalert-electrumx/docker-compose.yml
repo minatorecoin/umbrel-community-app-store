@@ -21,7 +21,7 @@ services:
         ipv4_address: $APP_ELECTRUMX_IP
   
   electrumx:
-    image: lukechilds/electrumx
+    image: lukechilds/electrumx:latest
     init: true
     environment:
       DAEMON_URL: "http://${APP_BITCOIN_RPC_USER}:${APP_BITCOIN_RPC_PASS}@${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
