@@ -33,7 +33,7 @@ services:
     restart: always
     stop_grace_period: 300s
     environment:
-      DAEMON_URL: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
+      DAEMON_URL: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_P2P_PORT}"
       COIN: "BitcoinSegwit"
       LOG_LEVEL: "debug"
       PEER_DISCOVERY: "off"
