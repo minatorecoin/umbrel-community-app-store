@@ -1,6 +1,7 @@
 version: "3.7"
 
 services:
+
   app_proxy:
     environment:
       APP_HOST: $APP_ELECTRS_IP
