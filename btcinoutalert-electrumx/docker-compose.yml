@@ -1,4 +1,3 @@
-version: "3.7"
 
 services:
   app_proxy:
@@ -7,7 +6,7 @@ services:
       APP_PORT: 3007
 
   app:
-    image: umbrel-community-app-store/btcinoutalert-electrumx
+    image: umbrel-community-app-store/btcinoutalert-electrumx:latest
     depends_on:
       - electrumx
     restart: on-failure
