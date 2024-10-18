@@ -7,23 +7,42 @@ services:
       APP_HOST: $APP_ELECTRS_IP
       APP_PORT: 3006
        
+#  electrumx:
+#    image: lukechilds/electrumx
+#    restart: always
+#    stop_grace_period: 300s
+#    environment:
+#      ELECTRS_LOG_FILTERS: "INFO"
+#      ELECTRS_NETWORK: "${APP_BITCOIN_NETWORK_ELECTRS}"
+#      ELECTRS_DAEMON_RPC_ADDR: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
+#      ELECTRS_DAEMON_P2P_ADDR: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_P2P_PORT}"
+#      ELECTRS_ELECTRUM_RPC_ADDR: "0.0.0.0:${APP_ELECTRS_NODE_PORT}"
+#      ELECTRS_SERVER_BANNER: "Umbrel Electrs (${APP_VERSION})"
+#      ELECTRS_DB_DIR: "/data/db"
+#    volumes:
+#      - "${APP_BITCOIN_DATA_DIR}:/data/.bitcoin:ro"
+#      - "${APP_DATA_DIR}/data/electrs:/data"
+#    ports:
+#      - "${APP_ELECTRS_NODE_PORT}:${APP_ELECTRS_NODE_PORT}"
+#    networks:
+#      default:
+#        ipv4_address: $APP_ELECTRS_NODE_IP
+
   electrumx:
     image: lukechilds/electrumx
     restart: always
     stop_grace_period: 300s
     environment:
-      ELECTRS_LOG_FILTERS: "INFO"
-      ELECTRS_NETWORK: "${APP_BITCOIN_NETWORK_ELECTRS}"
-      ELECTRS_DAEMON_RPC_ADDR: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
-      ELECTRS_DAEMON_P2P_ADDR: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_P2P_PORT}"
-      ELECTRS_ELECTRUM_RPC_ADDR: "0.0.0.0:${APP_ELECTRS_NODE_PORT}"
-      ELECTRS_SERVER_BANNER: "Umbrel Electrs (${APP_VERSION})"
-      ELECTRS_DB_DIR: "/data/db"
+      DAEMON_URL: "${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}"
+      COIN: "BitcoinSegwit"
+      LOG_LEVEL: "debug"
+      PEER_DISCOVERY: "off"
+      SERVICES: "tcp://:50001"
     volumes:
       - "${APP_BITCOIN_DATA_DIR}:/data/.bitcoin:ro"
       - "${APP_DATA_DIR}/data/electrs:/data"
     ports:
-      - "${APP_ELECTRS_NODE_PORT}:${APP_ELECTRS_NODE_PORT}"
+      - "${APP_ELECTRS_NODE_PORT}:50001"
     networks:
       default:
         ipv4_address: $APP_ELECTRS_NODE_IP
