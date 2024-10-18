@@ -7,10 +7,8 @@ tagline: Electrumx needs a tagline
 description: >
   Description goes here
 developer: henrygd
-website: https://github.com/henrygd/beszel
-submitter: henrygd
-submission:
-website: 
+website: https://github.com/lukechilds/electrumx
+submitter: lukechilds
 dependencies: []
 port: 10004
 gallery:
