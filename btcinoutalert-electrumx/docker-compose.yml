@@ -6,7 +6,7 @@ services:
       APP_PORT: 3007
 
   app:
-    image: umbrel-community-app-store/btcinoutalert-electrumx:latest
+    image: minatorecoin/umbrel-community-app-store-btcinoutalert-electrumx
     depends_on:
       - electrumx
     restart: on-failure
