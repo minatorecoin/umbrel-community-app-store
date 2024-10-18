@@ -9,8 +9,8 @@ description: >
 developer: Umbrel
 website: https://getumbrel.com/
 dependencies: []
-repo: https://github.com/getumbrel/electrumx
-support: https://github.com/getumbrel/electrumx/issues
+repo: https://github.com/minatorecoin/umbrel-apps/electrumx
+support: https://github.com/minatorecoin/umbrel-apps/electrumx/issues
 port: 10004
 gallery:
   - 1.jpg
