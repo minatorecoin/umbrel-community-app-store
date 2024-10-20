@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: btcinoutalert-mempool
+id: mempool
 category: bitcoin
 name: mempool
 version: "3.0.1"
