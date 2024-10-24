@@ -35,7 +35,7 @@ services:
       TCP: 0.0.0.0:50001
       BITCOIND: ${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}
       RPCUSER: umbrel
-      RPCPASSWORD: gF7xW8UPUPdIfAE6tBsalEWXtoqMZyuGAvCmeoDatMs=
+      RPCPASSWORD: qOV1gqByJF5SegMWqPgJKiPLaIQSS1407Y4jIaOE_Jc=
       PEERING: 'false'
       ANNOUNCE: 'false'
     command: Fulcrum _ENV_
