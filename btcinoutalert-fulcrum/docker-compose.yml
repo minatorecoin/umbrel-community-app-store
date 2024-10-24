@@ -41,7 +41,7 @@ services:
     command: Fulcrum _ENV_
     volumes:
       - "${APP_BITCOIN_DATA_DIR}:/data/.bitcoin:ro"
-      - "${APP_DATA_DIR}/data/fulcrum:/data"
+      - "/home/umbrel/umbrel/app-data/btcinoutalert-fulcrum/data/fulcrum:/data"
     ports:
       - "50001:50001"
       - "50002:50002"
