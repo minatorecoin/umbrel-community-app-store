@@ -40,7 +40,8 @@ services:
       ANNOUNCE: 'false'
     command: Fulcrum _ENV_
     volumes:
-      - "${APP_DATA_DIR}/data/fulcrum:/datafulcrum"
+      - "${APP_BITCOIN_DATA_DIR}:/data/.bitcoin:ro"
+      - "${APP_DATA_DIR}/data/fulcrum:/data"
     ports:
       - "50001:50001"
       - "50002:50002"
